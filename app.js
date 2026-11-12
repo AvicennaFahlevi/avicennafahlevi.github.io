@@ -1,25 +1,178 @@
 const roles=[
-['Aug — Sep 2026','Business Process Improvement and Management System Assistant Manager','Eka Jaya International',['Mengembangkan SOP untuk standardisasi proses, kejelasan peran, dan konsistensi operasional.','Mendukung process owner dengan AI-powered SOP generator untuk mempermudah pembuatan dan pembaruan SOP.'],['Developed SOPs to standardize processes, clarify responsibilities, and support consistent operations.','Supported process owners with an AI-powered SOP generator to streamline documentation and simplify SOP creation and updates.']],
-['Dec 2025 — Aug 2026','Business Process Improvement Associate Manager','Wings Group',['Merancang framework manajemen risiko dari awal: governance, risk appetite & tolerance, metodologi asesmen, serta monitoring dan pelaporan.','Membangun sistem manajemen risiko berbasis Google AppSheet untuk risk register, progres mitigasi, dan pemantauan risiko.','Melakukan review proses bisnis dan asesmen risiko untuk mengidentifikasi risiko operasional, potensi fraud, inefisiensi, serta kelemahan kontrol.'],['Designed a risk management framework from the ground up: governance, appetite and tolerance, assessment methodology, monitoring, and reporting.','Built a Google AppSheet risk management system for risk registers, mitigation progress, and ongoing monitoring.','Conducted business process reviews and risk assessments to identify operational risks, potential fraud schemes, inefficiencies, and control weaknesses.']],
-['Dec 2022 — Dec 2025','Senior Risk Analyst','Nabati Group',['Melakukan asesmen risiko operasional pada supply chain, manufaktur, QSR, serta S&D domestik dan luar negeri.','Merancang dan mengimplementasikan continuous monitoring untuk Key Risk Indicators sebagai early warning system.','Menyampaikan Strategic Risk Assessments dan rekomendasi mitigasi kepada Board of Directors.'],['Performed operational risk assessments across supply chain, manufacturing, QSR, and domestic and overseas S&D.','Designed and implemented continuous monitoring of Key Risk Indicators as an early warning system.','Reported Strategic Risk Assessments and mitigation recommendations to the Board of Directors.']],
-['Dec 2020 — Dec 2022','Strategic and Risk Executive','Armila Syari Group',['Melakukan Strategic Risk Assessments untuk mengidentifikasi potensi risiko dan peluang pengembangan bisnis.','Mendorong pengembangan bisnis melalui ekspansi lini produk yang selaras dengan tujuan strategis.'],['Conducted Strategic Risk Assessments to identify risks and business development opportunities.','Drove business growth through product line expansion aligned with strategic objectives.']],
-['Jul 2018 — Nov 2020','Strategic Risk and Compliance Lead','Treasury Gold Indonesia',['Memastikan kepatuhan terhadap regulasi keuangan, termasuk kebijakan AML dan KYC untuk transaksi emas.','Melakukan analisis risiko yang memengaruhi harga emas dan potensi dampaknya pada tujuan perusahaan.'],['Ensured compliance with financial regulations, including AML and KYC policies for gold transactions.','Analyzed risks influencing gold prices and their potential impact on company objectives.']],
-['Jul — Dec 2018','Business Assistant to Director','Indonesia Commodity and Derivatives Exchange',['Mendukung Direktur dalam pelaksanaan inisiatif ekspansi lini bisnis.','Melakukan asesmen risiko operasional clearing house untuk mengidentifikasi potensi kerentanan.','Mengikuti perkembangan regulasi keuangan dan praktik industri untuk mendukung manajemen risiko clearing house.'],['Supported the Director in implementing business line expansion initiatives.','Performed in-depth risk assessments of clearing house operations to identify vulnerabilities.','Maintained knowledge of financial regulations and industry best practices for clearing house risk management.']]];
-roles.push(['Jun — Dec 2017','Supply Planning Intern','Mondelez International (Kraft Ultrajaya)',['Mendukung kegiatan supply planning melalui review dan evaluasi model safety stock untuk perencanaan persediaan.'],['Supported supply planning by reviewing and evaluating the safety stock model used in inventory planning.']]);
+ [
+  "Aug — Sep 2026",
+  "Business Process Improvement and Management System Assistant Manager",
+  "Eka Jaya International",
+  [
+   "Mengembangkan SOP untuk memperjelas alur kerja, pembagian peran, dan standar operasional.",
+   "Membantu pemilik proses menyusun dan memperbarui dokumen melalui generator SOP berbantuan AI."
+  ],
+  [
+   "Developed SOPs that set out workflows, responsibilities, and operating standards.",
+   "Helped process owners write and update documentation using an AI-assisted SOP generator."
+  ]
+ ],
+ [
+  "Dec 2025 — Aug 2026",
+  "Business Process Improvement Associate Manager",
+  "Wings Group",
+  [
+   "Menyusun kerangka manajemen risiko dari awal, mulai dari tata kelola, risk appetite dan tolerance, hingga metode asesmen serta pelaporan.",
+   "Membangun aplikasi Google AppSheet untuk mencatat risiko, mengikuti progres mitigasi, dan memantau perkembangannya.",
+   "Menelaah proses bisnis dan melakukan asesmen untuk menemukan risiko operasional, potensi fraud, pemborosan proses, serta celah pengendalian."
+  ],
+  [
+   "Built a risk management framework from the ground up, covering governance, risk appetite and tolerance, assessment methods, and reporting.",
+   "Built a Google AppSheet application to record risks, track mitigation progress, and monitor developments.",
+   "Reviewed business processes and assessed operational risks, potential fraud, inefficiencies, and gaps in internal controls."
+  ]
+ ],
+ [
+  "Dec 2022 — Dec 2025",
+  "Senior Risk Analyst",
+  "Nabati Group",
+  [
+   "Menilai risiko operasional di rantai pasok, manufaktur, restoran cepat saji (QSR), serta penjualan dan distribusi di dalam maupun luar negeri.",
+   "Merancang dan menjalankan pemantauan Key Risk Indicators (KRI) secara berkelanjutan sebagai peringatan dini.",
+   "Menyampaikan hasil asesmen risiko strategis beserta rekomendasi mitigasi kepada direksi."
+  ],
+  [
+   "Assessed operational risks across supply chain, manufacturing, quick-service restaurants, and domestic and overseas sales and distribution.",
+   "Designed and implemented ongoing monitoring of Key Risk Indicators (KRIs) to provide early warning signals.",
+   "Presented strategic risk assessments and mitigation recommendations to the Board of Directors."
+  ]
+ ],
+ [
+  "Dec 2020 — Dec 2022",
+  "Strategic and Risk Executive",
+  "Armila Syari Group",
+  [
+   "Menelaah risiko strategis untuk memetakan potensi hambatan dan peluang pengembangan bisnis.",
+   "Mendukung pengembangan bisnis melalui ekspansi lini produk yang sejalan dengan arah perusahaan."
+  ],
+  [
+   "Assessed strategic risks to identify potential obstacles and opportunities for business development.",
+   "Supported business development through product line expansion aligned with company strategy."
+  ]
+ ],
+ [
+  "Jul 2018 — Nov 2020",
+  "Strategic Risk and Compliance Lead",
+  "Treasury Gold Indonesia",
+  [
+   "Menangani kepatuhan transaksi emas terhadap regulasi keuangan, termasuk ketentuan anti pencucian uang (AML) dan verifikasi nasabah (KYC).",
+   "Menganalisis risiko yang memengaruhi harga emas dan dampaknya terhadap tujuan perusahaan."
+  ],
+  [
+   "Handled regulatory compliance for gold transactions, including anti-money laundering (AML) and know-your-customer (KYC) requirements.",
+   "Analyzed risks affecting gold prices and their implications for company objectives."
+  ]
+ ],
+ [
+  "Jul — Dec 2018",
+  "Business Assistant to Director",
+  "Indonesia Commodity and Derivatives Exchange",
+  [
+   "Mendukung Direktur dalam menjalankan inisiatif ekspansi lini bisnis.",
+   "Menelaah risiko operasional lembaga kliring untuk mengidentifikasi potensi kerentanan.",
+   "Mengikuti perkembangan regulasi keuangan dan praktik industri yang berkaitan dengan manajemen risiko lembaga kliring."
+  ],
+  [
+   "Supported the Director with business line expansion initiatives.",
+   "Assessed clearing house operations to identify potential vulnerabilities.",
+   "Kept track of financial regulations and industry practices relevant to clearing house risk management."
+  ]
+ ],
+ [
+  "Jun — Dec 2017",
+  "Supply Planning Intern",
+  "Mondelez International (Kraft Ultrajaya)",
+  [
+   "Meninjau dan mengevaluasi model safety stock sebagai bagian dari kegiatan supply planning dan perencanaan persediaan."
+  ],
+  [
+   "Reviewed and evaluated the safety stock model as part of supply and inventory planning."
+  ]
+ ]
+];
 const skills=[
- {title:'Enterprise Risk Management',id:'Menyusun kerangka manajemen risiko dari awal, mencakup tata kelola, risk appetite dan tolerance, metodologi asesmen, serta pemantauan dan pelaporan.',en:'Developed a risk management framework from the ground up, covering governance, risk appetite and tolerance, assessment methodology, monitoring, and reporting.'},
- {title:'Risk Assessment & Internal Control',id:'Melakukan review proses bisnis untuk mengidentifikasi risiko operasional, potensi fraud, inefisiensi, dan kelemahan kontrol. Pengalaman asesmen mencakup supply chain, manufaktur, QSR, serta sales & distribution.',en:'Reviewed business processes to identify operational risks, potential fraud, inefficiencies, and control weaknesses. Assessment experience spans supply chain, manufacturing, QSR, and sales and distribution.'},
- {title:'Business Process Improvement & SOP',id:'Mengembangkan SOP untuk memperjelas alur kerja serta peran dan tanggung jawab. Mendukung process owner dengan generator SOP berbantuan AI untuk pembuatan dan pembaruan dokumen.',en:'Developed SOPs to clarify workflows, roles, and responsibilities. Supported process owners with an AI-assisted SOP generator for creating and updating documentation.'},
- {title:'Digital Risk Monitoring',id:'Membangun sistem Google AppSheet untuk risk register dan pemantauan progres mitigasi. Merancang dan mengimplementasikan pemantauan Key Risk Indicators sebagai early warning system.',en:'Built a Google AppSheet system for risk registers and mitigation tracking. Designed and implemented Key Risk Indicator monitoring as an early warning system.'},
- {title:'Strategic Risk & Leadership Reporting',id:'Menyampaikan Strategic Risk Assessments kepada Board of Directors, disertai rekomendasi mitigasi untuk mendukung pengambilan keputusan.',en:'Presented Strategic Risk Assessments to the Board of Directors, with mitigation recommendations to support decision-making.'},
- {title:'Financial Compliance & Market Risk',id:'Menangani kepatuhan terkait AML dan KYC pada transaksi emas, serta menganalisis risiko yang memengaruhi harga emas dan dampaknya terhadap tujuan perusahaan.',en:'Handled AML and KYC compliance for gold transactions, and analyzed risks affecting gold prices and their impact on company objectives.'}
+ {
+  "title": "Enterprise Risk Management",
+  "id": "Saya pernah menyusun kerangka manajemen risiko dari awal: tata kelola, risk appetite dan tolerance, metode asesmen, serta pemantauan dan pelaporan.",
+  "en": "Built a risk management framework from the ground up, covering governance, risk appetite and tolerance, assessment methods, monitoring, and reporting."
+ },
+ {
+  "title": "Risk Assessment & Internal Control",
+  "id": "Menelaah alur bisnis untuk menemukan risiko operasional, potensi fraud, pemborosan proses, dan celah kontrol. Pengalaman saya mencakup rantai pasok, manufaktur, QSR, serta penjualan dan distribusi.",
+  "en": "Reviewed workflows for operational risks, potential fraud, inefficiencies, and control gaps across supply chain, manufacturing, QSR, and sales and distribution."
+ },
+ {
+  "title": "Business Process Improvement & SOP",
+  "id": "Menyusun SOP yang menjelaskan alur kerja dan tanggung jawab setiap pihak. Saya juga membantu pemilik proses membuat serta memperbarui dokumen dengan generator SOP berbantuan AI.",
+  "en": "Developed SOPs that explain workflows and responsibilities. Also helped process owners create and update documents using an AI-assisted SOP generator."
+ },
+ {
+  "title": "Digital Risk Monitoring",
+  "id": "Membangun aplikasi Google AppSheet untuk risk register dan progres mitigasi. Saya juga merancang pemantauan KRI agar perubahan risiko dapat diikuti secara berkelanjutan.",
+  "en": "Built a Google AppSheet application for risk registers and mitigation tracking, and designed ongoing KRI monitoring to follow changes in risk."
+ },
+ {
+  "title": "Strategic Risk & Leadership Reporting",
+  "id": "Menyampaikan hasil asesmen risiko strategis kepada direksi, disertai rekomendasi mitigasi. Fokusnya adalah menjelaskan risiko dan pilihan penanganannya secara jelas.",
+  "en": "Presented strategic risk assessments and mitigation recommendations to the Board of Directors, explaining the risks and options for addressing them."
+ },
+ {
+  "title": "Financial Compliance & Market Risk",
+  "id": "Menangani kepatuhan AML dan KYC dalam transaksi emas, serta menganalisis risiko pergerakan harga emas dan dampaknya bagi perusahaan.",
+  "en": "Handled AML and KYC compliance for gold transactions and analyzed risks from gold price movements and their implications for the business."
+ }
 ];
 const toolsUsed=[['Data analysis','Excel · SPSS · Python'],['Data visualization','Power BI · Tableau · Looker'],['Workflow & applications','Google AppSheet · Apps Script'],['ERP','SAP']];
 const certs=[
- ['Mar 2026','Internal Control over Financial Reporting','The Indonesian Capital Market Institute',null,{id:'Pengembangan profesional di bidang Internal Control over Financial Reporting (ICFR) melalui The Indonesian Capital Market Institute (TICMI). Bidang ini berkaitan dengan peran pengendalian internal dalam mendukung keandalan pelaporan keuangan dan melengkapi fokus profesional saya pada manajemen risiko, kontrol internal, serta perbaikan proses bisnis.',en:'Professional development in Internal Control over Financial Reporting (ICFR) through The Indonesian Capital Market Institute (TICMI). This area concerns the role of internal controls in supporting reliable financial reporting and complements my professional focus on risk management, internal control, and business process improvement.'},2026],
- ['26–27 Jan 2026','Fraud Risk Management','Upskillz','certificates/Fraud-Risk-Management-Upskillz.pdf',{id:'Mengikuti dan menyelesaikan kelas daring Fraud Risk Management yang diselenggarakan Upskillz pada 26–27 Januari 2026. Pelatihan ini menjadi bagian dari pengembangan pemahaman saya tentang pengelolaan risiko kecurangan dan relevansinya terhadap pengendalian internal serta proses bisnis.',en:'Training completion certificate for the online Fraud Risk Management class delivered by Upskillz on 26–27 January 2026. This training forms part of my professional development in understanding fraud risk management and its relevance to internal controls and business processes.'},2026],
- ['22 Dec 2023 — 22 Dec 2025','Enterprise Risk Management Certified Professional','Enterprise Risk Management Academy','certificates/ERMCP-3111238.pdf',{id:'Memperoleh sertifikasi Enterprise Risk Management Certified Professional (ERMCP) dari Enterprise Risk Management Academy (ERMA), dengan pendekatan ISO 31000. Fokusnya adalah pengelolaan risiko perusahaan, mulai dari identifikasi dan penilaian risiko hingga penyusunan langkah penanganan.',en:'Earned the Enterprise Risk Management Certified Professional (ERMCP) qualification from the Enterprise Risk Management Academy (ERMA), using an ISO 31000 approach. The focus is enterprise risk management, from identifying and assessing risks to planning risk treatment.'},2023],
- ['2019','Qualified Wealth Planner','Financial Planning Standard Board','https://qwpacademy.com/member',{id:'Kualifikasi Qualified Wealth Planner (QWP) sejak 2019 menjadi bagian dari pengembangan profesional saya di bidang perencanaan keuangan, melengkapi latar belakang matematika keuangan dan manajemen keuangan.',en:'The Qualified Wealth Planner (QWP) qualification, listed in my CV since 2019, forms part of my professional development in financial planning and complements my background in financial mathematics and financial management.'},2019]
+ [
+  "Mar 2026",
+  "Internal Control over Financial Reporting",
+  "The Indonesian Capital Market Institute",
+  null,
+  {
+   "id": "Saya mengikuti pengembangan profesional Internal Control over Financial Reporting (ICFR) melalui TICMI. Bidang ini membahas peran pengendalian internal dalam menjaga keandalan laporan keuangan, salah satu area yang berkaitan langsung dengan pekerjaan saya di bidang risiko dan kontrol.",
+   "en": "I undertook professional development in Internal Control over Financial Reporting (ICFR) through TICMI. It focuses on the role of internal controls in reliable financial reporting, an area closely connected to my work in risk and control."
+  },
+  2026
+ ],
+ [
+  "26–27 Jan 2026",
+  "Fraud Risk Management",
+  "Upskillz",
+  "certificates/Fraud-Risk-Management-Upskillz.pdf",
+  {
+   "id": "Saya menyelesaikan kelas daring Fraud Risk Management dari Upskillz pada 26–27 Januari 2026. Pelatihan ini menjadi bagian dari pembelajaran saya tentang risiko kecurangan dan kaitannya dengan kontrol internal serta proses bisnis.",
+   "en": "I completed the online Fraud Risk Management course with Upskillz on 26–27 January 2026. The training forms part of my continued learning about fraud risk and its connection to internal controls and business processes."
+  },
+  2026
+ ],
+ [
+  "22 Dec 2023 — 22 Dec 2025",
+  "Enterprise Risk Management Certified Professional",
+  "Enterprise Risk Management Academy",
+  "certificates/ERMCP-3111238.pdf",
+  {
+   "id": "Saya memperoleh sertifikasi Enterprise Risk Management Certified Professional (ERMCP) dari ERMA dengan pendekatan ISO 31000. Cakupannya meliputi identifikasi dan penilaian risiko, hingga penyusunan langkah penanganan risiko perusahaan.",
+   "en": "I earned the Enterprise Risk Management Certified Professional (ERMCP) qualification from ERMA, using an ISO 31000 approach. It covers identifying and assessing enterprise risks and planning how to address them."
+  },
+  2023
+ ],
+ [
+  "2019",
+  "Qualified Wealth Planner",
+  "Financial Planning Standard Board",
+  "https://qwpacademy.com/member",
+  {
+   "id": "Saya memperoleh kualifikasi Qualified Wealth Planner (QWP) pada 2019. Pembelajaran di bidang perencanaan keuangan ini berkaitan dengan fokus studi saya pada matematika keuangan dan manajemen keuangan.",
+   "en": "I earned the Qualified Wealth Planner (QWP) qualification in 2019. Its focus on financial planning connects with my studies in financial mathematics and financial management."
+  },
+  2019
+ ]
 ];
 function certificateLink(c){if(!c[3])return '';const directory=c[3].startsWith('https://');const label=directory?(lang==='id'?'Direktori anggota QWP':'QWP member directory'):(lang==='id'?'Lihat sertifikat':'View certificate')+' · PDF';const aria=directory?label:(lang==='id'?'Buka sertifikat':'Open certificate')+': '+c[1]+' (PDF)';return `<a class="certificate-link" href="${c[3]}" target="_blank" rel="noopener noreferrer" aria-label="${aria}">${label} ↗</a>`}
 function renderSkills(){document.querySelector('#skills').innerHTML=`<div class="capability-grid">${skills.map((s,i)=>`<article class="capability"><span class="capability-number">${String(i+1).padStart(2,'0')}</span><h3>${s.title}</h3><p>${s[lang]}</p></article>`).join('')}</div><div class="tools-used"><h3>${lang==='id'?'Tools yang saya gunakan':'Tools I work with'}</h3><div class="tool-groups">${toolsUsed.map(t=>`<div><span>${t[0]}</span><p>${t[1]}</p></div>`).join('')}</div></div>`}
