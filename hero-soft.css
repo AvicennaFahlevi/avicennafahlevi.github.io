@@ -19,7 +19,7 @@ header .brand .brand-monogram img{display:block;width:100%;height:100%;object-fi
 .hero-soft .download:hover{background:#e9eee1}
 .hero-soft .location{font-size:8px;letter-spacing:1px;margin-top:27px;color:#627365}
 .hero-soft .hero-visual{position:absolute;z-index:0;inset:0 0 0 auto;width:46%;min-width:0;pointer-events:none;mask-image:linear-gradient(180deg,transparent,#000 7%,#000 96%,transparent)}
-.hero-soft .hero-office{display:block;width:auto;max-width:100%;height:100%;margin-left:auto;margin-right:0;object-fit:contain;object-position:50% 50%;clip-path:inset(0 0 8% 0);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 100%)}
+.hero-soft .hero-office{display:block;width:auto;max-width:100%;height:100%;margin-left:auto;margin-right:0;object-fit:contain;object-position:50% 50%;clip-path:inset(0 0 10.2% 0);mask-image:linear-gradient(90deg,transparent,#000 14%,#000 100%),linear-gradient(180deg,#000 0%,#000 87%,transparent 89.8%);mask-composite:intersect}
 .hero-soft .hero-visual:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#faf7f1 0%,#faf7f1b3 10%,transparent 35%),linear-gradient(0deg,#faf7f1,transparent 5%)}
 .hero-soft .hero-signature{position:absolute;z-index:2;right:4%;bottom:46px;max-width:290px;padding:15px 21px;border:1px solid #d9e6d475;border-radius:12px;background:#284b3cb3;backdrop-filter:blur(12px);color:#fff;box-shadow:0 10px 35px #17352a12}
 .hero-signature b{font-family:'DM Serif Display',Georgia,serif;font-size:23px;font-weight:400;letter-spacing:0}
@@ -55,7 +55,7 @@ html[lang="en"] .hero-soft h1 span{white-space:normal}
  .hero-soft .eyebrow{position:relative;grid-column:1/-1;grid-row:1;max-width:none;margin-bottom:20px}
  .hero-soft .eyebrow:after{top:calc(100% + 9px)}
  .hero-soft .hero-visual{grid-column:2;grid-row:2;order:0;width:100%;height:195px;margin:0;align-self:center;mask-image:linear-gradient(180deg,transparent,#000 8%,#000 96%,transparent);overflow:hidden}
- .hero-soft .hero-office{transform:none;object-position:50% 50%;mask-image:linear-gradient(90deg,transparent,#000 20%,#000 100%)}
+ .hero-soft .hero-office{transform:none;object-position:50% 50%;mask-image:linear-gradient(90deg,transparent,#000 20%,#000 100%),linear-gradient(180deg,#000 0%,#000 87%,transparent 89.8%);mask-composite:intersect}
  .hero-soft .hero-visual:after{display:block;background:linear-gradient(180deg,#faf7f1,transparent 10%,transparent 96%,#faf7f1)}
  .hero-soft .hero-signature{display:none}
  .hero-soft h1{grid-column:1;grid-row:2;margin:12px 0;font-size:clamp(24px,7vw,34px);line-height:1.15;overflow-wrap:normal}

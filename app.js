@@ -197,7 +197,7 @@ function certificateLink(c){
  const href=directory?c[3]:`${c[3]}&lang=${lang}`;
  return `<a class="certificate-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}: ${c[1]}">${label} ↗</a>`;
 }
-function renderSkills(){document.querySelector('#skills').innerHTML=`<div class="capability-grid">${skills.map((s,i)=>`<article class="capability"><span class="capability-number">${String(i+1).padStart(2,'0')}</span><h3>${s.title}</h3><p>${s[lang]}</p></article>`).join('')}</div><div class="tools-used"><div class="tools-heading"><span class="eyebrow">${lang==='id'?'PERANGKAT KERJA':'TOOLKIT'}</span><h3>${lang==='id'?'Tools yang digunakan':'Tools in practice'}</h3></div><div class="tool-groups">${toolsUsed.map(t=>`<article class="tool-group"><div class="tool-group-heading"><span class="tool-index" aria-hidden="true">${t.symbol}</span><h4>${t[lang]}</h4></div><ul class="tool-tags">${t.items.map(name=>`<li>${name}</li>`).join('')}</ul></article>`).join('')}</div></div>`}
+function renderSkills(){document.querySelector('#skills').innerHTML=`<div class="capability-grid">${skills.map((s,i)=>`<article class="capability"><span class="capability-number">${String(i+1).padStart(2,'0')}</span><h3>${s.title}</h3><p>${s[lang]}</p></article>`).join('')}</div><div class="tools-used"><div class="tools-heading"><span class="eyebrow">${lang==='id'?'PERANGKAT KERJA':'TOOLKIT'}</span><h3>${lang==='id'?'Tools & sistem':'Tools & systems'}</h3></div><dl class="tool-directory">${toolsUsed.map(t=>`<div class="tool-row"><dt>${t[lang]}</dt><dd>${t.items.map(name=>`<span>${name}</span>`).join('')}</dd></div>`).join('')}</dl></div>`}
 let lang='en';
 applyLanguage();
 function applyLanguage(){
