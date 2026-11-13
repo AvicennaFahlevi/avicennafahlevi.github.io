@@ -8,9 +8,10 @@ Website: https://avicennafahlevi.github.io/
 
 - Bilingual Indonesian and English content
 - Interactive career, education, and certification timeline
-- Capabilities linked to relevant professional experience
-- CV and certificate PDF links
+- Practical capabilities and a tools directory
+- Downloadable CV, with certificates and thesis abstracts in a document viewer
 - Responsive desktop and mobile layouts
+- Cookieless Umami analytics for visits, LinkedIn campaigns, and key interactions
 
 This is a static HTML, CSS, and JavaScript website. GitHub Pages publishes the root of the `main` branch. `.nojekyll` disables Jekyll processing. No dependency installation or build step is required.
 
