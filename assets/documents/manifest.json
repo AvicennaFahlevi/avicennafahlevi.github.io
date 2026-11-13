@@ -1,0 +1,42 @@
+{
+  "cv": {
+    "title": "Dzulfikar Fahlevi · CV",
+    "pages": [
+      "assets/documents/cv/page-1.jpg",
+      "assets/documents/cv/page-2.jpg"
+    ]
+  },
+  "icofr": {
+    "title": "Internal Control over Financial Reporting · TICMI",
+    "pages": [
+      "assets/documents/icofr/page-1.jpg"
+    ]
+  },
+  "fraud-risk": {
+    "title": "Fraud Risk Management · Upskillz",
+    "pages": [
+      "assets/documents/fraud-risk/page-1.jpg"
+    ]
+  },
+  "ermcp": {
+    "title": "Enterprise Risk Management Certified Professional · ERMA",
+    "pages": [
+      "assets/documents/ermcp/page-1.jpg"
+    ]
+  },
+  "math-thesis": {
+    "title": "Mathematics · Thesis Abstracts",
+    "pages": [
+      "assets/documents/math-thesis/page-1.jpg",
+      "assets/documents/math-thesis/page-2.jpg",
+      "assets/documents/math-thesis/page-3.jpg"
+    ]
+  },
+  "icmeb-2018": {
+    "title": "Best Paper Award & Presenter · ICMEB UMB 2018",
+    "pages": [
+      "assets/documents/icmeb-2018/page-1.jpg",
+      "assets/documents/icmeb-2018/page-2.jpg"
+    ]
+  }
+}

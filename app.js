@@ -133,7 +133,7 @@ const certs=[
   "Mar 2026",
   "Internal Control over Financial Reporting",
   "The Indonesian Capital Market Institute",
-  "certificates/ICOFR-TICMI.pdf",
+  "document.html?doc=icofr",
   {
    "id": "Pengembangan profesional di bidang Internal Control over Financial Reporting (ICFR) melalui TICMI, dengan fokus pada peran pengendalian internal dalam mendukung keandalan pelaporan keuangan.",
    "en": "Professional development in Internal Control over Financial Reporting (ICFR) through TICMI, focused on the role of internal controls in supporting reliable financial reporting."
@@ -144,7 +144,7 @@ const certs=[
   "26–27 Jan 2026",
   "Fraud Risk Management",
   "Upskillz",
-  "certificates/Fraud-Risk-Management-Upskillz.pdf",
+  "document.html?doc=fraud-risk",
   {
    "id": "Pelatihan daring Fraud Risk Management dari Upskillz, diselesaikan pada 26–27 Januari 2026, yang membahas risiko kecurangan serta kaitannya dengan pengendalian internal dan proses bisnis.",
    "en": "Online Fraud Risk Management training from Upskillz, completed on 26–27 January 2026, covering fraud risk and its relationship with internal controls and business processes."
@@ -155,7 +155,7 @@ const certs=[
   "22 Dec 2023 — 22 Dec 2025",
   "Enterprise Risk Management Certified Professional",
   "Enterprise Risk Management Academy",
-  "certificates/ERMCP-3111238.pdf",
+  "document.html?doc=ermcp",
   {
    "id": "Sertifikasi Enterprise Risk Management Certified Professional (ERMCP) dari ERMA dengan pendekatan ISO 31000, mencakup identifikasi dan penilaian risiko serta penyusunan langkah penanganan risiko perusahaan.",
    "en": "Enterprise Risk Management Certified Professional (ERMCP) qualification from ERMA, using an ISO 31000 approach to enterprise risk identification, assessment, and treatment planning."
@@ -172,15 +172,33 @@ const certs=[
    "en": "Qualified Wealth Planner (QWP) qualification in financial planning, obtained in 2019 and aligned with an educational background in financial mathematics and financial management."
   },
   2019
+ ],
+ [
+  "21–22 Feb 2018",
+  "Best Paper Award · 3rd Place & Presenter",
+  "Universitas Mercu Buana",
+  "document.html?doc=icmeb-2018",
+  {
+   "id": "Penghargaan Best Paper peringkat ketiga bersama Akbar Adhiutama serta partisipasi sebagai presenter pada International Conference on Management, Economic and Business of Universitas Mercu Buana (ICMEB UMB), yang berlangsung di Yogyakarta pada 21–22 Februari 2018.",
+   "en": "Third-place Best Paper Award with Akbar Adhiutama and participation as a presenter at the International Conference on Management, Economic and Business of Universitas Mercu Buana (ICMEB UMB), held in Yogyakarta on 21–22 February 2018."
+  },
+  2018
  ]
 ];
-function certificateLink(c){if(!c[3])return '';const directory=c[3].startsWith('https://');const label=directory?(lang==='id'?'Direktori anggota QWP':'QWP member directory'):(lang==='id'?'Lihat sertifikat':'View certificate')+' · PDF';const aria=directory?label:(lang==='id'?'Buka sertifikat':'Open certificate')+': '+c[1]+' (PDF)';return `<a class="certificate-link" href="${c[3]}" target="_blank" rel="noopener noreferrer" aria-label="${aria}">${label} ↗</a>`}
+function certificateLink(c){
+ if(!c[3])return '';
+ const directory=c[3].startsWith('https://');
+ const label=directory?(lang==='id'?'Direktori anggota QWP':'QWP member directory'):(lang==='id'?'Lihat dokumen':'View document');
+ const href=directory?c[3]:`${c[3]}&lang=${lang}`;
+ return `<a class="certificate-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}: ${c[1]}">${label} ↗</a>`;
+}
 function renderSkills(){document.querySelector('#skills').innerHTML=`<div class="capability-grid">${skills.map((s,i)=>`<article class="capability"><span class="capability-number">${String(i+1).padStart(2,'0')}</span><h3>${s.title}</h3><p>${s[lang]}</p></article>`).join('')}</div><div class="tools-used"><h3>${lang==='id'?'Tools yang saya gunakan':'Tools I work with'}</h3><div class="tool-groups">${toolsUsed.map(t=>`<div><span>${t[0]}</span><p>${t[1]}</p></div>`).join('')}</div></div>`}
 let lang='en';
 applyLanguage();
 function applyLanguage(){
  document.documentElement.lang=lang;
  document.querySelectorAll('[data-id]').forEach(e=>e.innerHTML=e.dataset[lang]);
+ document.querySelectorAll('[data-document]').forEach(e=>e.href=`document.html?doc=${e.dataset.document}&lang=${lang}`);
  const b=document.querySelector('#language');
  b.textContent=lang==='id'?'EN ↗':'ID ↗';
  b.setAttribute('aria-label',lang==='id'?'Switch to English':'Ganti ke Bahasa Indonesia');
