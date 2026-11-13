@@ -112,9 +112,9 @@ const skills=[
   "en": "Developing SOPs that explain workflows and responsibilities, and helping process owners create and update documents using an AI-assisted SOP generator."
  },
  {
-  "title": "Digital Risk Monitoring",
-  "id": "Membangun aplikasi Google AppSheet untuk risk register dan progres mitigasi, serta merancang pemantauan KRI agar perubahan risiko dapat diikuti secara berkelanjutan.",
-  "en": "Building Google AppSheet applications for risk registers and mitigation tracking, and designing KRI monitoring to follow changes in risk on an ongoing basis."
+  "title": "Risk Analytics",
+  "id": "Menggunakan data risiko untuk menyusun Key Risk Indicators (KRI) dan membaca perubahan tingkat risiko. Digitalisasi risk register dan pemantauan mitigasi membantu pencatatan yang lebih teratur serta penyampaian sinyal peringatan dini kepada manajemen.",
+  "en": "Using risk data to develop Key Risk Indicators (KRIs) and track changes in risk levels. Digital risk registers and mitigation monitoring support more consistent records and early warning signals for management."
  },
  {
   "title": "Strategic Risk & Leadership Reporting",
@@ -122,12 +122,17 @@ const skills=[
   "en": "Presenting strategic risk assessments and mitigation recommendations to the Board of Directors, with a focus on explaining risks and treatment options clearly."
  },
  {
-  "title": "Financial Compliance & Market Risk",
-  "id": "Menangani kepatuhan AML dan KYC dalam transaksi emas, serta menganalisis risiko pergerakan harga emas dan dampaknya bagi perusahaan.",
-  "en": "Handling AML and KYC compliance for gold transactions, and analyzing risks from gold price movements and their implications for the business."
+  "title": "Business Risk & Opportunity Assessment",
+  "id": "Menelaah risiko strategis, potensi hambatan, dan peluang pengembangan bisnis sebagai masukan bagi rencana ekspansi. Pengalaman mencakup dukungan pengembangan lini produk dan penelaahan risiko operasional pada lini bisnis keuangan.",
+  "en": "Reviewing strategic risks, potential obstacles, and business development opportunities to inform expansion plans. Experience includes supporting product line development and reviewing operational risks in financial business lines."
  }
 ];
-const toolsUsed=[['Data analysis','Excel · SPSS · Python'],['Data visualization','Power BI · Tableau · Looker'],['Workflow & applications','Google AppSheet · Apps Script'],['ERP','SAP']];
+const toolsUsed=[
+ {id:'Analisis data',en:'Data analysis',symbol:'01',items:['Excel','SPSS','SQL']},
+ {id:'Visualisasi & pelaporan',en:'Visualization & reporting',symbol:'02',items:['Power BI','Looker Studio']},
+ {id:'Aplikasi & otomatisasi',en:'Applications & automation',symbol:'03',items:['Google AppSheet','Google Apps Script']},
+ {id:'Enterprise resource planning',en:'Enterprise resource planning',symbol:'04',items:['SAP']}
+];
 const certs=[
  [
   "Mar 2026",
@@ -192,7 +197,7 @@ function certificateLink(c){
  const href=directory?c[3]:`${c[3]}&lang=${lang}`;
  return `<a class="certificate-link" href="${href}" target="_blank" rel="noopener noreferrer" aria-label="${label}: ${c[1]}">${label} ↗</a>`;
 }
-function renderSkills(){document.querySelector('#skills').innerHTML=`<div class="capability-grid">${skills.map((s,i)=>`<article class="capability"><span class="capability-number">${String(i+1).padStart(2,'0')}</span><h3>${s.title}</h3><p>${s[lang]}</p></article>`).join('')}</div><div class="tools-used"><h3>${lang==='id'?'Tools yang saya gunakan':'Tools I work with'}</h3><div class="tool-groups">${toolsUsed.map(t=>`<div><span>${t[0]}</span><p>${t[1]}</p></div>`).join('')}</div></div>`}
+function renderSkills(){document.querySelector('#skills').innerHTML=`<div class="capability-grid">${skills.map((s,i)=>`<article class="capability"><span class="capability-number">${String(i+1).padStart(2,'0')}</span><h3>${s.title}</h3><p>${s[lang]}</p></article>`).join('')}</div><div class="tools-used"><div class="tools-heading"><span class="eyebrow">${lang==='id'?'PERANGKAT KERJA':'TOOLKIT'}</span><h3>${lang==='id'?'Tools yang digunakan':'Tools in practice'}</h3></div><div class="tool-groups">${toolsUsed.map(t=>`<article class="tool-group"><div class="tool-group-heading"><span class="tool-index" aria-hidden="true">${t.symbol}</span><h4>${t[lang]}</h4></div><ul class="tool-tags">${t.items.map(name=>`<li>${name}</li>`).join('')}</ul></article>`).join('')}</div></div>`}
 let lang='en';
 applyLanguage();
 function applyLanguage(){

@@ -1,4 +1,5 @@
 const identity={
+ 'Universitas Mercu Buana':{initials:'UMB',image:'assets/logos/mercu-buana.png',url:'https://www.mercubuana.ac.id/'},
  'Mondelez International (Kraft Ultrajaya)':{initials:'MDLZ',image:'assets/logos/mondelez.png',url:'https://www.mondelezinternational.com/'},
  'Eka Jaya International':{initials:'EJI',image:'assets/logos/eji.png',url:'https://eji.co.id/'},
  'Wings Group':{initials:'WG',image:'assets/logos/wings.png',url:'https://wingscorp.com/',color:'#b93536'},
