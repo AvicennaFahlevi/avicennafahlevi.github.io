@@ -3,7 +3,7 @@ const identity={
  'Eka Jaya International':{initials:'EJI',image:'assets/eji.png',url:'https://eji.co.id/'},
  'Wings Group':{initials:'WG',image:'assets/wings.png',url:'https://wingscorp.com/',color:'#b93536'},
  'Nabati Group':{initials:'NG',image:'assets/nabati.png',url:'https://www.nabatigroup.com/',color:'#cf9d21'},
- 'Armila Syari Group':{initials:'AS',image:'assets/armila-transparent.png',color:'#687b48'},
+ 'Armila Syari Group':{initials:'AS',image:'assets/armila-transparent.png',url:'https://www.instagram.com/armila_official/',color:'#687b48'},
  'Treasury Gold Indonesia':{initials:'TG',image:'assets/treasury.png',url:'https://www.treasury.id/'},
  'Indonesia Commodity and Derivatives Exchange':{initials:'ICDX',image:'assets/icdx.png',url:'https://www.icdx.co.id/'},
  'Institut Teknologi Bandung':{initials:'ITB',image:'assets/itb-emblem.png',url:'https://itb.ac.id/'},
