@@ -15,7 +15,7 @@ function renderPage(){
  previous.disabled=index===0;next.disabled=index===entry.pages.length-1;
  stage.scrollTop=0;stage.scrollLeft=0;
 }
-image.onload=()=>{image.hidden=false;status.textContent='';};
+image.onload=()=>{image.hidden=false;status.textContent='';window.cvAnalytics?.track('document_page_view',{document_id:params.get('doc'),page_number:index+1});};
 image.onerror=()=>{status.textContent=labels.error;};
 previous.onclick=()=>{if(index>0){index--;renderPage();}};
 next.onclick=()=>{if(entry&&index<entry.pages.length-1){index++;renderPage();}};

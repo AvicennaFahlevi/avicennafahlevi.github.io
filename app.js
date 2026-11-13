@@ -212,4 +212,4 @@ function applyLanguage(){
 }
 document.querySelector('#language').addEventListener('click',()=>{lang=lang==='id'?'en':'id';applyLanguage()});
 
-document.querySelector('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('fahlevi.dzulfikar@gmail.com');document.querySelector('#status').textContent=lang==='id'?'Email berhasil disalin.':'Email copied.'}catch{document.querySelector('#status').textContent=lang==='id'?'Silakan salin: fahlevi.dzulfikar@gmail.com':'Please copy: fahlevi.dzulfikar@gmail.com'}});
+document.querySelector('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('fahlevi.dzulfikar@gmail.com');document.querySelector('#status').textContent=lang==='id'?'Email berhasil disalin.':'Email copied.';window.cvAnalytics?.track('contact_click',{contact_method:'copy_email',placement:'contact'})}catch{document.querySelector('#status').textContent=lang==='id'?'Silakan salin: fahlevi.dzulfikar@gmail.com':'Please copy: fahlevi.dzulfikar@gmail.com'}});
