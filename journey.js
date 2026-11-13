@@ -1,16 +1,16 @@
 const identity={
  'Mondelez International (Kraft Ultrajaya)':{initials:'MDLZ',image:'assets/mondelez.png',url:'https://www.mondelezinternational.com/'},
  'Eka Jaya International':{initials:'EJI',image:'assets/eji.png',url:'https://eji.co.id/'},
- 'Wings Group':{initials:'WG',image:'assets/wings.png',color:'#b93536'},
- 'Nabati Group':{initials:'NG',image:'assets/nabati.png',color:'#cf9d21'},
+ 'Wings Group':{initials:'WG',image:'assets/wings.png',url:'https://wingscorp.com/',color:'#b93536'},
+ 'Nabati Group':{initials:'NG',image:'assets/nabati.png',url:'https://www.nabatigroup.com/',color:'#cf9d21'},
  'Armila Syari Group':{initials:'AS',image:'assets/armila-transparent.png',color:'#687b48'},
  'Treasury Gold Indonesia':{initials:'TG',image:'assets/treasury.png',url:'https://www.treasury.id/'},
  'Indonesia Commodity and Derivatives Exchange':{initials:'ICDX',image:'assets/icdx.png',url:'https://www.icdx.co.id/'},
  'Institut Teknologi Bandung':{initials:'ITB',image:'assets/itb-emblem.png',url:'https://itb.ac.id/'},
- 'The Indonesian Capital Market Institute':{initials:'TICMI',image:'assets/ticmi.png'},
- 'Upskillz':{initials:'U',image:'assets/upskillz.png'},
- 'Enterprise Risk Management Academy':{initials:'ERMA',image:'assets/erma.png'},
- 'Financial Planning Standard Board':{initials:'QWP',image:'assets/qwp.png'}
+ 'The Indonesian Capital Market Institute':{initials:'TICMI',image:'assets/ticmi.png',url:'https://ticmi.co.id/'},
+ 'Upskillz':{initials:'U',image:'assets/upskillz.png',url:'https://upskillz.id/'},
+ 'Enterprise Risk Management Academy':{initials:'ERMA',image:'assets/erma.png',url:'https://www.erm-academy.org/'},
+ 'Financial Planning Standard Board':{initials:'QWP',image:'assets/qwp.png',url:'https://qwpacademy.com/'}
 };
 function companyMark(name){const c=identity[name]||{initials:name.split(' ').slice(0,2).map(s=>s[0]).join('')};return `<span class="company-mark${name==='Institut Teknologi Bandung'?' itb-mark':''}" style="--mark:${c.color||'#284f4c'}">${c.image?`<img src="${c.image}" alt="${name}" loading="eager" decoding="async" width="${name==='Institut Teknologi Bandung'?42:90}" height="${name==='Institut Teknologi Bandung'?42:56}">`:`<span aria-label="${name}">${c.initials}</span>`}</span>`}
 const journeys={
@@ -19,11 +19,38 @@ const journeys={
  certification:certs.map((c,i)=>({year:c[5],date:c[0],title:c[1],org:c[2],certificate:c,bodyId:[c[4].id],bodyEn:[c[4].en],type:'certification'}))
 };
 let journeyTab='career',selectedJourney=0;
-const words={id:{career:'Karier',education:'Pendidikan',certification:'Sertifikasi',previous:'Sebelumnya',next:'Berikutnya',source:'Situs organisasi ↗',count:'dari',early:'Awal perjalanan',now:'Peran terakhir di CV'},en:{career:'Career',education:'Education',certification:'Certifications',previous:'Previous',next:'Next',source:'Organization website ↗',count:'of',early:'Journey begins',now:'Latest role in CV'}};
+const words={id:{career:'Karier',education:'Pendidikan',certification:'Sertifikasi',previous:'Sebelumnya',next:'Berikutnya',count:'dari',early:'Awal perjalanan',now:'Peran terakhir di CV'},en:{career:'Career',education:'Education',certification:'Certifications',previous:'Previous',next:'Next',count:'of',early:'Journey begins',now:'Latest role in CV'}};
 function journeyItems(){return journeys[journeyTab]}
 function renderJourneyBody(item){const body=lang==='id'?item.bodyId:item.bodyEn;if(item.type==='career')return `<ul>${body.map(b=>`<li>${b}</li>`).join('')}</ul>`;return `<p class="journey-description">${body[0]}</p>${body.length>1?`<div class="education-links">${body.slice(1).join('')}</div>`:''}`}
-function renderJourney(focus=false){const w=words[lang],items=journeyItems();selectedJourney=Math.min(selectedJourney,items.length-1);const item=items[selectedJourney];const org=identity[item.org];document.querySelector('#roles').innerHTML=`<div class="journey-controls"><div class="journey-tabs" role="group" aria-label="${lang==='id'?'Jenis perjalanan':'Journey category'}">${['career','education','certification'].map(k=>`<button type="button" data-category="${k}" aria-pressed="${journeyTab===k}">${w[k]}</button>`).join('')}</div></div><div class="journey-layout"><div class="milestone-rail" aria-label="Timeline">${items.map((r,i)=>`<button type="button" class="milestone ${i===selectedJourney?'selected':''}" data-milestone="${i}" aria-pressed="${i===selectedJourney}"><span class="rail-dot"></span><span class="rail-year">${r.year}</span>${companyMark(r.org)}<span class="milestone-text"><b>${r.org}</b><small>${r.date}</small><span>${w[r.type]}</span></span><span class="rail-arrow" aria-hidden="true">↗</span></button>`).join('')}</div><article class="journey-detail" id="journey-detail" tabindex="-1"><div class="detail-top">${companyMark(item.org)}<span class="detail-count">${String(selectedJourney+1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}</span></div><div class="detail-category">${w[item.type]} · ${item.date}</div><h3>${item.title}</h3><p class="detail-org">${item.org}</p>${renderJourneyBody(item)}${item.certificate?certificateLink(item.certificate):''}${org?.url?`<a class="org-source" href="${org.url}" target="_blank" rel="noopener noreferrer">${w.source}</a>`:''}<div class="journey-pager"><button type="button" data-direction="-1" ${selectedJourney===0?'disabled':''} aria-label="${w.previous}">← <span>${w.previous}</span></button><span aria-live="polite">${selectedJourney+1} ${w.count} ${items.length}</span><button type="button" data-direction="1" ${selectedJourney===items.length-1?'disabled':''} aria-label="${w.next}"><span>${w.next}</span> →</button></div></article></div>`;
-document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{journeyTab=b.dataset.category;selectedJourney=0;renderJourney();document.querySelector(`[data-category="${journeyTab}"]`).focus()});document.querySelectorAll('[data-milestone]').forEach(b=>b.onclick=()=>{selectedJourney=+b.dataset.milestone;renderJourney();document.querySelector(`[data-milestone="${selectedJourney}"]`).focus()});document.querySelectorAll('[data-direction]').forEach(b=>b.onclick=()=>{selectedJourney+=+b.dataset.direction;renderJourney(true)});if(focus)document.querySelector('#journey-detail').focus();}
+function journeyWebsite(item){
+ const url=identity[item.org]?.url;
+ if(!url)return '';
+ const domain=url.replace(/^https?:\/\/(www\.)?/,'').replace(/\/$/,'');
+ return `<a class="milestone-site" href="${url}" target="_blank" rel="noopener noreferrer" aria-label="${lang==='id'?'Kunjungi':'Visit'} ${item.org}">${domain} ↗</a>`;
+}
+function renderJourney(focus=false){
+ const w=words[lang],items=journeyItems();
+ selectedJourney=Math.min(selectedJourney,items.length-1);
+ const item=items[selectedJourney];
+ document.querySelector('#roles').innerHTML=`
+ <div class="journey-controls"><div class="journey-tabs" role="group" aria-label="${lang==='id'?'Jenis perjalanan':'Journey category'}">${['career','education','certification'].map(k=>`<button type="button" data-category="${k}" aria-pressed="${journeyTab===k}">${w[k]}</button>`).join('')}</div></div>
+ <div class="journey-layout"><div class="milestone-rail" aria-label="Timeline">${items.map((r,i)=>`
+  <div class="milestone ${i===selectedJourney?'selected':''}">
+   <button type="button" class="milestone-select" data-milestone="${i}" aria-pressed="${i===selectedJourney}" aria-label="${r.year} ${r.org} ${r.date}"></button>
+   <span class="rail-dot"></span><span class="rail-year">${r.year}</span>${companyMark(r.org)}
+   <span class="milestone-text"><b>${r.org}</b><small>${r.date}</small>${journeyWebsite(r)}</span><span class="rail-arrow" aria-hidden="true">↗</span>
+  </div>`).join('')}</div>
+ <article class="journey-detail" id="journey-detail" tabindex="-1">
+  <div class="detail-top">${companyMark(item.org)}<span class="detail-count">${String(selectedJourney+1).padStart(2,'0')} / ${String(items.length).padStart(2,'0')}</span></div>
+  <div class="detail-category">${item.date}</div><h3>${item.title}</h3><p class="detail-org">${item.org}</p>
+  ${renderJourneyBody(item)}${item.certificate?certificateLink(item.certificate):''}
+  <div class="journey-pager"><button type="button" data-direction="-1" ${selectedJourney===0?'disabled':''} aria-label="${w.previous}">← <span>${w.previous}</span></button><span aria-live="polite">${selectedJourney+1} ${w.count} ${items.length}</span><button type="button" data-direction="1" ${selectedJourney===items.length-1?'disabled':''} aria-label="${w.next}"><span>${w.next}</span> →</button></div>
+ </article></div>`;
+ document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{journeyTab=b.dataset.category;selectedJourney=0;renderJourney();document.querySelector(`[data-category="${journeyTab}"]`).focus()});
+ document.querySelectorAll('[data-milestone]').forEach(b=>b.onclick=()=>{selectedJourney=+b.dataset.milestone;renderJourney();document.querySelector(`[data-milestone="${selectedJourney}"]`).focus()});
+ document.querySelectorAll('[data-direction]').forEach(b=>b.onclick=()=>{selectedJourney+=+b.dataset.direction;renderJourney(true)});
+ if(focus)document.querySelector('#journey-detail').focus();
+}
 document.querySelector('#language').addEventListener('click',()=>renderJourney());renderJourney();
 const progress=document.createElement('div');progress.className='reading-progress';progress.setAttribute('aria-hidden','true');document.body.append(progress);let scheduled=false;window.addEventListener('scroll',()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';scheduled=false})},{passive:true});
 const sectionObserver=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('nav a').forEach(a=>{const active=a.hash==='#'+e.target.id;if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')})}})},{rootMargin:'-15% 0px -55% 0px'});document.querySelectorAll('main section[id]').forEach(s=>sectionObserver.observe(s));

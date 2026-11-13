@@ -17,3 +17,10 @@
  .milestone:before{content:'';position:absolute;left:-1px;right:-11px;bottom:-12px;top:auto;height:1px;background:#c6d1be;pointer-events:none}
  .milestone:last-child:before{right:0}
 }
+
+/* Selection and external links are separate controls, never nested buttons. */
+.milestone-select{position:absolute;inset:0 0 28px;z-index:0;border:0;background:transparent;border-radius:inherit;cursor:pointer}
+.milestone .rail-year,.milestone .company-mark,.milestone-text,.milestone .rail-arrow{position:relative;z-index:1;pointer-events:none}
+.milestone-text .milestone-site{pointer-events:auto;font-size:10px;letter-spacing:0;text-transform:none;color:#496840;line-height:1.5;min-height:24px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.milestone-site:hover{color:#123234}
+@media(max-width:700px){.milestone-text .milestone-site{min-height:44px;font-size:10px}.milestone{min-height:158px}.milestone-select{bottom:52px}}
