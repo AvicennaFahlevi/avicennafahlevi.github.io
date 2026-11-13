@@ -133,7 +133,7 @@ const certs=[
   "Mar 2026",
   "Internal Control over Financial Reporting",
   "The Indonesian Capital Market Institute",
-  null,
+  "certificates/ICOFR-TICMI.pdf",
   {
    "id": "Pengembangan profesional di bidang Internal Control over Financial Reporting (ICFR) melalui TICMI, dengan fokus pada peran pengendalian internal dalam mendukung keandalan pelaporan keuangan.",
    "en": "Professional development in Internal Control over Financial Reporting (ICFR) through TICMI, focused on the role of internal controls in supporting reliable financial reporting."
