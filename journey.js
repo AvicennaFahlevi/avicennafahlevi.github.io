@@ -53,7 +53,11 @@ function renderJourney(focus=false){
   <div class="journey-pager"><button type="button" data-direction="-1" ${selectedJourney===0?'disabled':''} aria-label="${w.previous}">← <span>${w.previous}</span></button><span aria-live="polite">${selectedJourney+1} ${w.count} ${items.length}</span><button type="button" data-direction="1" ${selectedJourney===items.length-1?'disabled':''} aria-label="${w.next}"><span>${w.next}</span> →</button></div>
  </article></div>`;
  document.querySelectorAll('[data-category]').forEach(b=>b.onclick=()=>{journeyTab=b.dataset.category;selectedJourney=0;renderJourney();document.querySelector(`[data-category="${journeyTab}"]`).focus()});
- document.querySelectorAll('[data-milestone]').forEach(b=>b.onclick=()=>{selectedJourney=+b.dataset.milestone;renderJourney();document.querySelector(`[data-milestone="${selectedJourney}"]`).focus()});
+ document.querySelectorAll('.milestone').forEach(card=>card.onclick=event=>{
+  if(event.target.closest('a'))return;
+  const button=card.querySelector('[data-milestone]');
+  selectedJourney=+button.dataset.milestone;renderJourney();document.querySelector(`[data-milestone="${selectedJourney}"]`).focus();
+ });
  document.querySelectorAll('[data-direction]').forEach(b=>b.onclick=()=>{selectedJourney+=+b.dataset.direction;renderJourney(true)});
  if(focus)document.querySelector('#journey-detail').focus();
 }

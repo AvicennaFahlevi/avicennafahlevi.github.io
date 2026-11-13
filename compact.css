@@ -34,7 +34,8 @@
 .company-mark img[src*="armila-transparent"]{transform:scale(1.65)!important}
 
 /* The card selects an entry; only the visible organization URL opens a website. */
-.milestone-select{inset:0}
+.milestone{cursor:pointer}
+.milestone-select{inset:0 0 42px}
 .milestone-text .milestone-site{align-self:flex-start;width:fit-content;max-width:100%;position:relative;z-index:2}
 .tools-used{margin-top:32px;padding-top:30px;border-top:1px solid var(--line)}
 .tools-heading{margin-bottom:20px}
@@ -47,5 +48,5 @@
 .tool-group h4{font-size:13px;font-weight:500;margin:0;line-height:1.5;color:#123234}
 .tool-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
 .tool-tags li{font-size:13px;line-height:1.5;padding:7px 11px;background:#fff;border:1px solid #d8e1ce;border-radius:6px;color:#123234}
-@media(max-width:700px){.milestone-select{inset:0}.tools-used .tool-group{padding:16px}.tools-used .tools-heading h3{font-size:22px}}
+@media(max-width:700px){.milestone-select{inset:0 0 58px}.tools-used .tool-group{padding:16px}.tools-used .tools-heading h3{font-size:22px}}
 @media(max-width:440px){.tools-used .tool-groups{grid-template-columns:1fr}}
