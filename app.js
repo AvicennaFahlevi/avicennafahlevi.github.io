@@ -98,33 +98,33 @@ const roles=[
 const skills=[
  {
   "title": "Enterprise Risk Management",
-  "id": "Saya pernah menyusun kerangka manajemen risiko dari awal: tata kelola, risk appetite dan tolerance, metode asesmen, serta pemantauan dan pelaporan.",
-  "en": "Built a risk management framework from the ground up, covering governance, risk appetite and tolerance, assessment methods, monitoring, and reporting."
+  "id": "Menyusun kerangka manajemen risiko dari awal: tata kelola, risk appetite dan tolerance, metode asesmen, serta pemantauan dan pelaporan.",
+  "en": "Developing risk management frameworks from the ground up, covering governance, risk appetite and tolerance, assessment methods, monitoring, and reporting."
  },
  {
   "title": "Risk Assessment & Internal Control",
-  "id": "Menelaah alur bisnis untuk menemukan risiko operasional, potensi fraud, pemborosan proses, dan celah kontrol. Pengalaman saya mencakup rantai pasok, manufaktur, QSR, serta penjualan dan distribusi.",
-  "en": "Reviewed workflows for operational risks, potential fraud, inefficiencies, and control gaps across supply chain, manufacturing, QSR, and sales and distribution."
+  "id": "Menelaah alur bisnis untuk menemukan risiko operasional, potensi fraud, pemborosan proses, dan celah kontrol. Pengalaman asesmen mencakup rantai pasok, manufaktur, QSR, serta penjualan dan distribusi.",
+  "en": "Reviewing business workflows to identify operational risks, potential fraud, inefficiencies, and control gaps, with assessment experience across supply chain, manufacturing, QSR, and sales and distribution."
  },
  {
   "title": "Business Process Improvement & SOP",
-  "id": "Menyusun SOP yang menjelaskan alur kerja dan tanggung jawab setiap pihak. Saya juga membantu pemilik proses membuat serta memperbarui dokumen dengan generator SOP berbantuan AI.",
-  "en": "Developed SOPs that explain workflows and responsibilities. Also helped process owners create and update documents using an AI-assisted SOP generator."
+  "id": "Menyusun SOP yang menjelaskan alur kerja dan tanggung jawab setiap pihak, serta membantu pemilik proses membuat dan memperbarui dokumen dengan generator SOP berbantuan AI.",
+  "en": "Developing SOPs that explain workflows and responsibilities, and helping process owners create and update documents using an AI-assisted SOP generator."
  },
  {
   "title": "Digital Risk Monitoring",
-  "id": "Membangun aplikasi Google AppSheet untuk risk register dan progres mitigasi. Saya juga merancang pemantauan KRI agar perubahan risiko dapat diikuti secara berkelanjutan.",
-  "en": "Built a Google AppSheet application for risk registers and mitigation tracking, and designed ongoing KRI monitoring to follow changes in risk."
+  "id": "Membangun aplikasi Google AppSheet untuk risk register dan progres mitigasi, serta merancang pemantauan KRI agar perubahan risiko dapat diikuti secara berkelanjutan.",
+  "en": "Building Google AppSheet applications for risk registers and mitigation tracking, and designing KRI monitoring to follow changes in risk on an ongoing basis."
  },
  {
   "title": "Strategic Risk & Leadership Reporting",
   "id": "Menyampaikan hasil asesmen risiko strategis kepada direksi, disertai rekomendasi mitigasi. Fokusnya adalah menjelaskan risiko dan pilihan penanganannya secara jelas.",
-  "en": "Presented strategic risk assessments and mitigation recommendations to the Board of Directors, explaining the risks and options for addressing them."
+  "en": "Presenting strategic risk assessments and mitigation recommendations to the Board of Directors, with a focus on explaining risks and treatment options clearly."
  },
  {
   "title": "Financial Compliance & Market Risk",
   "id": "Menangani kepatuhan AML dan KYC dalam transaksi emas, serta menganalisis risiko pergerakan harga emas dan dampaknya bagi perusahaan.",
-  "en": "Handled AML and KYC compliance for gold transactions and analyzed risks from gold price movements and their implications for the business."
+  "en": "Handling AML and KYC compliance for gold transactions, and analyzing risks from gold price movements and their implications for the business."
  }
 ];
 const toolsUsed=[['Data analysis','Excel · SPSS · Python'],['Data visualization','Power BI · Tableau · Looker'],['Workflow & applications','Google AppSheet · Apps Script'],['ERP','SAP']];
@@ -135,8 +135,8 @@ const certs=[
   "The Indonesian Capital Market Institute",
   null,
   {
-   "id": "Saya mengikuti pengembangan profesional Internal Control over Financial Reporting (ICFR) melalui TICMI. Bidang ini membahas peran pengendalian internal dalam menjaga keandalan laporan keuangan, salah satu area yang berkaitan langsung dengan pekerjaan saya di bidang risiko dan kontrol.",
-   "en": "I undertook professional development in Internal Control over Financial Reporting (ICFR) through TICMI. It focuses on the role of internal controls in reliable financial reporting, an area closely connected to my work in risk and control."
+   "id": "Pengembangan profesional di bidang Internal Control over Financial Reporting (ICFR) melalui TICMI, dengan fokus pada peran pengendalian internal dalam mendukung keandalan pelaporan keuangan.",
+   "en": "Professional development in Internal Control over Financial Reporting (ICFR) through TICMI, focused on the role of internal controls in supporting reliable financial reporting."
   },
   2026
  ],
@@ -146,8 +146,8 @@ const certs=[
   "Upskillz",
   "certificates/Fraud-Risk-Management-Upskillz.pdf",
   {
-   "id": "Saya menyelesaikan kelas daring Fraud Risk Management dari Upskillz pada 26–27 Januari 2026. Pelatihan ini menjadi bagian dari pembelajaran saya tentang risiko kecurangan dan kaitannya dengan kontrol internal serta proses bisnis.",
-   "en": "I completed the online Fraud Risk Management course with Upskillz on 26–27 January 2026. The training forms part of my continued learning about fraud risk and its connection to internal controls and business processes."
+   "id": "Pelatihan daring Fraud Risk Management dari Upskillz, diselesaikan pada 26–27 Januari 2026, yang membahas risiko kecurangan serta kaitannya dengan pengendalian internal dan proses bisnis.",
+   "en": "Online Fraud Risk Management training from Upskillz, completed on 26–27 January 2026, covering fraud risk and its relationship with internal controls and business processes."
   },
   2026
  ],
@@ -157,8 +157,8 @@ const certs=[
   "Enterprise Risk Management Academy",
   "certificates/ERMCP-3111238.pdf",
   {
-   "id": "Saya memperoleh sertifikasi Enterprise Risk Management Certified Professional (ERMCP) dari ERMA dengan pendekatan ISO 31000. Cakupannya meliputi identifikasi dan penilaian risiko, hingga penyusunan langkah penanganan risiko perusahaan.",
-   "en": "I earned the Enterprise Risk Management Certified Professional (ERMCP) qualification from ERMA, using an ISO 31000 approach. It covers identifying and assessing enterprise risks and planning how to address them."
+   "id": "Sertifikasi Enterprise Risk Management Certified Professional (ERMCP) dari ERMA dengan pendekatan ISO 31000, mencakup identifikasi dan penilaian risiko serta penyusunan langkah penanganan risiko perusahaan.",
+   "en": "Enterprise Risk Management Certified Professional (ERMCP) qualification from ERMA, using an ISO 31000 approach to enterprise risk identification, assessment, and treatment planning."
   },
   2023
  ],
@@ -168,8 +168,8 @@ const certs=[
   "Financial Planning Standard Board",
   "https://qwpacademy.com/member",
   {
-   "id": "Saya memperoleh kualifikasi Qualified Wealth Planner (QWP) pada 2019. Pembelajaran di bidang perencanaan keuangan ini berkaitan dengan fokus studi saya pada matematika keuangan dan manajemen keuangan.",
-   "en": "I earned the Qualified Wealth Planner (QWP) qualification in 2019. Its focus on financial planning connects with my studies in financial mathematics and financial management."
+   "id": "Kualifikasi Qualified Wealth Planner (QWP) pada 2019 di bidang perencanaan keuangan, selaras dengan latar pendidikan matematika keuangan dan manajemen keuangan.",
+   "en": "Qualified Wealth Planner (QWP) qualification in financial planning, obtained in 2019 and aligned with an educational background in financial mathematics and financial management."
   },
   2019
  ]
