@@ -31,3 +31,4 @@
 .company-mark img{object-fit:contain!important;object-position:center!important;transform:none!important}
 .milestone-text{flex:1;min-width:0}
 @media(max-width:700px){.milestone .company-mark:not(.itb-mark){width:40px!important;min-width:40px!important;max-width:40px!important;flex-basis:40px!important;height:40px!important;padding:4px!important}}
+.company-mark img[src*="armila-transparent"]{transform:scale(1.65)!important}
