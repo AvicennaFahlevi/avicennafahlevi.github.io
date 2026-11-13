@@ -176,7 +176,17 @@ const certs=[
 ];
 function certificateLink(c){if(!c[3])return '';const directory=c[3].startsWith('https://');const label=directory?(lang==='id'?'Direktori anggota QWP':'QWP member directory'):(lang==='id'?'Lihat sertifikat':'View certificate')+' · PDF';const aria=directory?label:(lang==='id'?'Buka sertifikat':'Open certificate')+': '+c[1]+' (PDF)';return `<a class="certificate-link" href="${c[3]}" target="_blank" rel="noopener noreferrer" aria-label="${aria}">${label} ↗</a>`}
 function renderSkills(){document.querySelector('#skills').innerHTML=`<div class="capability-grid">${skills.map((s,i)=>`<article class="capability"><span class="capability-number">${String(i+1).padStart(2,'0')}</span><h3>${s.title}</h3><p>${s[lang]}</p></article>`).join('')}</div><div class="tools-used"><h3>${lang==='id'?'Tools yang saya gunakan':'Tools I work with'}</h3><div class="tool-groups">${toolsUsed.map(t=>`<div><span>${t[0]}</span><p>${t[1]}</p></div>`).join('')}</div></div>`}
-let lang='id';
-renderSkills();
-document.querySelector('#language').addEventListener('click',()=>{lang=lang==='id'?'en':'id';document.documentElement.lang=lang;document.querySelectorAll('[data-id]').forEach(e=>e.innerHTML=e.dataset[lang]);const b=document.querySelector('#language');b.textContent=lang==='id'?'EN ↗':'ID ↗';b.setAttribute('aria-label',lang==='id'?'Switch to English':'Ganti ke Bahasa Indonesia');document.querySelector('#status').textContent='';renderSkills()});
+let lang='en';
+applyLanguage();
+function applyLanguage(){
+ document.documentElement.lang=lang;
+ document.querySelectorAll('[data-id]').forEach(e=>e.innerHTML=e.dataset[lang]);
+ const b=document.querySelector('#language');
+ b.textContent=lang==='id'?'EN ↗':'ID ↗';
+ b.setAttribute('aria-label',lang==='id'?'Switch to English':'Ganti ke Bahasa Indonesia');
+ document.querySelector('#status').textContent='';
+ renderSkills();
+}
+document.querySelector('#language').addEventListener('click',()=>{lang=lang==='id'?'en':'id';applyLanguage()});
+
 document.querySelector('#copy').addEventListener('click',async()=>{try{await navigator.clipboard.writeText('fahlevi.dzulfikar@gmail.com');document.querySelector('#status').textContent=lang==='id'?'Email berhasil disalin.':'Email copied.'}catch{document.querySelector('#status').textContent=lang==='id'?'Silakan salin: fahlevi.dzulfikar@gmail.com':'Please copy: fahlevi.dzulfikar@gmail.com'}});

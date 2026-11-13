@@ -1,17 +1,22 @@
 const identity={
- 'Mondelez International (Kraft Ultrajaya)':{initials:'MDLZ',image:'assets/mondelez.png',url:'https://www.mondelezinternational.com/'},
- 'Eka Jaya International':{initials:'EJI',image:'assets/eji.png',url:'https://eji.co.id/'},
- 'Wings Group':{initials:'WG',image:'assets/wings.png',url:'https://wingscorp.com/',color:'#b93536'},
- 'Nabati Group':{initials:'NG',image:'assets/nabati.png',url:'https://www.nabatigroup.com/',color:'#cf9d21'},
- 'Armila Syari Group':{initials:'AS',image:'assets/armila-transparent.png',url:'https://www.instagram.com/armila_official/',color:'#687b48'},
- 'Treasury Gold Indonesia':{initials:'TG',image:'assets/treasury.png',url:'https://www.treasury.id/'},
- 'Indonesia Commodity and Derivatives Exchange':{initials:'ICDX',image:'assets/icdx.png',url:'https://www.icdx.co.id/'},
- 'Institut Teknologi Bandung':{initials:'ITB',image:'assets/itb-emblem.png',url:'https://itb.ac.id/'},
- 'The Indonesian Capital Market Institute':{initials:'TICMI',image:'assets/ticmi.png',url:'https://ticmi.co.id/'},
- 'Upskillz':{initials:'U',image:'assets/upskillz.png',url:'https://upskillz.id/'},
- 'Enterprise Risk Management Academy':{initials:'ERMA',image:'assets/erma.png',url:'https://www.erm-academy.org/'},
- 'Financial Planning Standard Board':{initials:'QWP',image:'assets/qwp.png',url:'https://qwpacademy.com/'}
+ 'Mondelez International (Kraft Ultrajaya)':{initials:'MDLZ',image:'assets/logos/mondelez.png',url:'https://www.mondelezinternational.com/'},
+ 'Eka Jaya International':{initials:'EJI',image:'assets/logos/eji.png',url:'https://eji.co.id/'},
+ 'Wings Group':{initials:'WG',image:'assets/logos/wings.png',url:'https://wingscorp.com/',color:'#b93536'},
+ 'Nabati Group':{initials:'NG',image:'assets/logos/nabati.png',url:'https://www.nabatigroup.com/',color:'#cf9d21'},
+ 'Armila Syari Group':{initials:'AS',image:'assets/logos/armila-transparent.png',url:'https://www.instagram.com/armila_official/',color:'#687b48'},
+ 'Treasury Gold Indonesia':{initials:'TG',image:'assets/logos/treasury.png',url:'https://www.treasury.id/'},
+ 'Indonesia Commodity and Derivatives Exchange':{initials:'ICDX',image:'assets/logos/icdx.png',url:'https://www.icdx.co.id/'},
+ 'Institut Teknologi Bandung':{initials:'ITB',image:'assets/logos/itb-emblem.png',url:'https://itb.ac.id/'},
+ 'The Indonesian Capital Market Institute':{initials:'TICMI',image:'assets/logos/ticmi.png',url:'https://ticmi.co.id/'},
+ 'Upskillz':{initials:'U',image:'assets/logos/upskillz.png',url:'https://upskillz.id/'},
+ 'Enterprise Risk Management Academy':{initials:'ERMA',image:'assets/logos/erma.png',url:'https://www.erm-academy.org/'},
+ 'Financial Planning Standard Board':{initials:'QWP',image:'assets/logos/qwp.png',url:'https://qwpacademy.com/'}
 };
+
+// Warm the small logo files once, before switching journey tabs.
+if(typeof Image!=='undefined'){
+ Object.values(identity).forEach(({image})=>{if(image){const logo=new Image();logo.src=image;}});
+}
 function companyMark(name){const c=identity[name]||{initials:name.split(' ').slice(0,2).map(s=>s[0]).join('')};return `<span class="company-mark${name==='Institut Teknologi Bandung'?' itb-mark':''}" style="--mark:${c.color||'#284f4c'}">${c.image?`<img src="${c.image}" alt="${name}" loading="eager" decoding="async" width="${name==='Institut Teknologi Bandung'?42:90}" height="${name==='Institut Teknologi Bandung'?42:56}">`:`<span aria-label="${name}">${c.initials}</span>`}</span>`}
 const journeys={
  career:roles.map((r,i)=>({year:[2026,2025,2022,2020,2018,2018,2017][i],date:r[0],title:r[1],org:r[2],bodyId:r[3],bodyEn:r[4],type:'career'})),

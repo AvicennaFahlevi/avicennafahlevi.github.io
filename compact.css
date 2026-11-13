@@ -24,3 +24,10 @@
 .milestone-text .milestone-site{pointer-events:auto;font-size:10px;letter-spacing:0;text-transform:none;color:#496840;line-height:1.5;min-height:24px;display:inline-flex;align-items:center;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .milestone-site:hover{color:#123234}
 @media(max-width:700px){.milestone-text .milestone-site{min-height:44px;font-size:10px}.milestone{min-height:158px}.milestone-select{bottom:52px}}
+
+/* Shared logo columns keep Treasury and every other organization aligned. */
+.milestone .company-mark:not(.itb-mark){box-sizing:border-box!important;width:66px!important;min-width:66px!important;max-width:66px!important;flex:0 0 66px!important;height:52px!important;padding:7px!important;background:#fff}
+.detail-top .company-mark:not(.itb-mark){box-sizing:border-box!important;width:100px!important;min-width:100px!important;max-width:100px!important;flex:0 0 100px!important;height:68px!important;padding:7px!important;background:#fff}
+.company-mark img{object-fit:contain!important;object-position:center!important;transform:none!important}
+.milestone-text{flex:1;min-width:0}
+@media(max-width:700px){.milestone .company-mark:not(.itb-mark){width:40px!important;min-width:40px!important;max-width:40px!important;flex-basis:40px!important;height:40px!important;padding:4px!important}}
